@@ -2,10 +2,7 @@ package cn.jarrodquan.openblive.websocket.data
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-/**
- * 弹幕信息
- */
-data class DmData(
+data class LikeData(
     /**
      * 用户昵称
      */
@@ -23,24 +20,20 @@ data class DmData(
      */
     val timestamp: Long,
     /**
-     * 弹幕接收的直播间
+     * 发生的直播间
      */
     @JsonProperty("room_id")
     val roomId: Long,
     /**
-     * 弹幕内容
+     * 点赞文案( “xxx点赞了”)
      */
-    val msg: String,
+    @JsonProperty("like_text")
+    val likeText: String,
     /**
-     * 消息唯一id
+     * 对单个用户最近2秒的点赞次数聚合
      */
-    @JsonProperty("msg_id")
-    val msgId: String,
-    /**
-     * 对应房间大航海等级
-     */
-    @JsonProperty("guard_level")
-    val guardLevel: Long,
+    @JsonProperty("like_count")
+    val likeCount: Long,
     /**
      * 该房间粉丝勋章佩戴情况
      */
@@ -53,17 +46,8 @@ data class DmData(
     val fansMedalName: String,
     /**
      * 对应房间勋章信息
+     *
      */
     @JsonProperty("fans_medal_level")
-    val fansMedalLevel: Long,
-    /**
-     * 表情包图片地址
-     */
-    @JsonProperty("emoji_img_url")
-    val emojiImgUrl: String,
-    /**
-     * 弹幕类型 0：普通弹幕 1：表情包弹幕
-     */
-    @JsonProperty("dm_type")
-    val dmType: Long
+    val fansMedalLevel: String
 ) : OpenBLiveData()

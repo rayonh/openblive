@@ -79,7 +79,22 @@ data class SendGiftData(
      * 消息唯一id
      */
     @JsonProperty("msg_id")
-    val msgId: String
+    val msgId: String,
+    /**
+     * 道具icon
+     */
+    @JsonProperty("gift_icon")
+    val giftIcon: String,
+    /**
+     * 是否是combo道具
+     */
+    @JsonProperty("combo_gift")
+    val comboGift: Boolean,
+    /**
+     * 连击信息
+     */
+    @JsonProperty("combo_info")
+    val comboInfo: ComboInfo,
 ) : OpenBLiveData() {
     /**
      * 主播信息
@@ -97,5 +112,31 @@ data class SendGiftData(
          * 主播头像
          */
         val uface: String,
+    )
+
+    /**
+     * 连击信息
+     */
+    data class ComboInfo(
+        /**
+         * 每次连击赠送的道具数量
+         */
+        @JsonProperty("combo_base_num")
+        val comboBaseNum: Long,
+        /**
+         * 连击次数
+         */
+        @JsonProperty("combo_count")
+        val comboCount: Long,
+        /**
+         * 连击id
+         */
+        @JsonProperty("combo_id")
+        val comboId: String,
+        /**
+         * 连击有效期秒
+         */
+        @JsonProperty("combo_timeout")
+        val comboTimeout: Long,
     )
 }

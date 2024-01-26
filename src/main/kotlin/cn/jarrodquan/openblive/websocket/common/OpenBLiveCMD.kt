@@ -10,7 +10,8 @@ enum class OpenBLiveCMD(
     LIVE_OPEN_PLATFORM_SEND_GIFT("获取礼物信息", SendGiftData::class.java),
     LIVE_OPEN_PLATFORM_SUPER_CHAT("获取付费留言", SuperChatData::class.java),
     LIVE_OPEN_PLATFORM_SUPER_CHAT_DEL("付费留言下线", SuperChatDelData::class.java),
-    LIVE_OPEN_PLATFORM_GUARD("付费大航海", GuardData::class.java);
+    LIVE_OPEN_PLATFORM_GUARD("付费大航海", GuardData::class.java),
+    LIVE_OPEN_PLATFORM_LIKE("点赞信息", LikeData::class.java);
 
     companion object {
         fun match(name: String): OpenBLiveCMD? {
