@@ -83,6 +83,7 @@ class OpenBLiveWebSocketListener(
                     )
 
                     LIVE_OPEN_PLATFORM_GUARD -> eventPublisher.publish(OpenBLiveEvent.ON_GUARD, it.data as GuardData)
+                    LIVE_OPEN_PLATFORM_LIKE -> eventPublisher.publish(OpenBLiveEvent.ON_LIKE, it.data as LikeData)
                 }
             }
         } catch (exception: Exception) {
