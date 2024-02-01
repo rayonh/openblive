@@ -104,6 +104,8 @@ data class SendGiftData(
          * 主播uid
          */
         val uid: Long,
+        @JsonProperty("open_id")
+        val openId: String,
         /**
          * 主播昵称
          */

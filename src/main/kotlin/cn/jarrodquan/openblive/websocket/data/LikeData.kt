@@ -11,6 +11,8 @@ data class LikeData(
      * 用户UID
      */
     val uid: Long,
+    @JsonProperty("open_id")
+    val openId: String,
     /**
      * 用户头像
      */

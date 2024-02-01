@@ -61,6 +61,8 @@ data class GuardData(
          * 购买用户UID
          */
         val uid: Long,
+        @JsonProperty("open_id")
+        val openId: String,
         /**
          * 购买的用户昵称
          */
